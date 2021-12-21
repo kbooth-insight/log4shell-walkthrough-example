@@ -1,6 +1,13 @@
 #! /usr/bin/env bash
 shopt -s expand_aliases
 
+if [ "$1" == "" ] || [ $# -gt 1 ];
+then
+        echo "pass IP address of machine you are running this from"
+        exit 1
+fi
+
+
 if command -v podman &> /dev/null
 then
     echo "podman found..."
