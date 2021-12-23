@@ -41,13 +41,9 @@ This script will setup the HTTP server and the LDAP server for you, and it will 
 <br>
 
 
-Our vulnerable application
---------------------------
-
-We have added a Dockerfile with the vulnerable webapp. You can use this by following the steps below:
+There is a Dockerfile with the vulnerable webapp. You can use this by following the steps below:
 ```c
-1: docker build -t log4j-shell-poc .
-2: docker run --network host log4j-shell-poc
+1: ./run-poc.sh <public ip>
 ```
 Once it is running, you can access it on [localhost:8080]()
 
