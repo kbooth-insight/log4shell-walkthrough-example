@@ -14,9 +14,9 @@ then
     alias docker="podman"
 fi
 
-docker kill $(docker ps -q)
+#docker kill $(docker ps -q)
 docker build -t webserver:latest -f ./vulnerable-application/Dockerfile ./vulnerable-application/.
 docker build -t exploit-ldap-server:latest -f ./exploit-ldap-server/Dockerfile ./exploit-ldap-server/.
 
-docker run --name webserver --rm -d -p 8080:8080 webserver
-docker run  --name ldap-exploit-server --rm -d -p 8000:8000 -p 1389:1389 exploit-ldap-server $1
+docker run --rm -d -p 8080:8080 webserver
+docker run --rm -d -p 8000:8000 -p 1389:1389 exploit-ldap-server $1
